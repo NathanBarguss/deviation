@@ -53,7 +53,9 @@ guiObject_t *GUI_CreateImageOffset(guiImage_t *image, u16 x, u16 y, u16 width, u
 
 void GUI_DrawImage(struct guiObject *obj)
 {
-#define SELECT_BORDER_OFFSET 1
+// NBarguss: Do we need the 1px border on the 7e? - 
+// All it seems to do is stop icons being placed next to each other.
+#define SELECT_BORDER_OFFSET 0
     struct guiImage *image = (struct guiImage *)obj;
     struct guiBox *box = &obj->box;
     _GUI_DrawMappedStart();
